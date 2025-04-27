@@ -2,13 +2,9 @@ import requests
 import telebot
 import time
 
-# Токен твоего бота
 TOKEN = '8113463759:AAGDcv9ffQXXJvUjVVpDjHy88zUYZG***'
-
-# Твой Telegram user_id
 MY_USER_ID = 450564953
 
-# Инициализация бота
 bot = telebot.TeleBot(TOKEN)
 
 def get_solana_price():
@@ -23,7 +19,9 @@ def send_daily_update():
         price = get_solana_price()
         message = f"Сегодняшний курс Solana (SOL): ${price}"
         bot.send_message(MY_USER_ID, message)
-        time.sleep(86400)  # 86400 секунд = 24 часа
+        time.sleep(60)  # 1 минута паузы
+        time.sleep(2)   # Плюс 2 секунды отдыха для Render (обязательно!)
 
 if _name_ == "_main_":
+    time.sleep(5)  # Пауза 5 секунд перед стартом, чтобы Render не ругался
     send_daily_update()
