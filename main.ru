@@ -3,7 +3,7 @@ import telebot
 import time
 
 # Токен твоего бота
-TOKEN = '8113463759:AAGDcv9ffQXXJvUjVVpDjHy88zUYZG***'
+TOKEN = '8113463759:AAGDcv9ffQXXJvUjVVpDjHy88zUYZG*****'
 
 # Твой Telegram user_id
 MY_USER_ID = 450564953
@@ -23,7 +23,7 @@ def send_daily_update():
         price = get_solana_price()
         message = f"Сегодняшний курс Solana (SOL): ${price}"
         bot.send_message(MY_USER_ID, message)
-        time.sleep(60)
+        time.sleep(60)  # 86400 секунд = 24 часа
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     send_daily_update()
