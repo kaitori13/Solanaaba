@@ -23,7 +23,7 @@ def send_daily_update():
         price = get_solana_price()
         message = f"Сегодняшний курс Solana (SOL): ${price}"
         bot.send_message(MY_USER_ID, message)
-        time.sleep(86400)  # 86400 секунд = 24 часа
+        time.sleep(60)  # 60 секунд = 1 минута
 
 if __name__ == "__main__":
     send_daily_update()
